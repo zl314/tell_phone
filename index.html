@@ -1,60 +1,76 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<p>你好！如有需要请点击下方按钮拨打我的电话，谢谢！</p>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-image: url("1.jpg"); /* 设置背景图像 */
-      background-size: cover; /* 将背景图片缩放至填满整个背景区域 */
-      background-repeat: no-repeat; /* 禁止背景图片重复显示 */
-      background-position: center; /* 调整背景图片的位置为居中 */
+      background-color: #FFF;
       font-family: Arial, sans-serif;
-      color: #fff;
+      color: #000;
       text-align: center;
       padding-top: 100px;
-	  min-height: 100vh; /* 将页面内容的最小高度设置为视口高度 */
+      min-height: 100vh;
+    }
+    .top-bar {
+      background-color: #4EEE94;
+      color: #fff;
+      font-size: 100px;
+      padding: 50px;
+      text-align: center;
+      border-radius: 30px;
+    }
+    .license-plate {
+      font-size: 50px;
+      margin-top: 30px;
+      text-align: center;
     }
     .phone-link {
+	  width: 100%;
       display: inline-block;
-      color: #007bff;
+      color: #4EEE94;
       text-decoration: none;
       font-size: 35px;
       padding: 30px;
-      border: 2px solid #007bff;
-      border-radius: 5px;
+      border: 2px solid #4EEE94;
+      border-radius: 30px;
       transition: all 0.3s ease-out;
     }
     .phone-link:hover {
-      background-color: #007bff;
-      color: #fff;
+      background-color: #fff;
+      color: #4EEE94;
+      border: 2px solid #4EEE94;
     }
-	p {
-      font-size: 50px; /* 设置字体大小 */
-	  margin-bottom: 500px; /* 调整文字和按钮之间的间距 */
-      color: #FF0000; /* 设置字体颜色 */
+    .phone-link:active {
+      transform: scale(0.9);
+    }
+    .bottom-section {
+	  width: 100%;
+      height: 500px;
+      background-image: url("1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center bottom 30px; /* 在底部留出 30 像素的空白 */
+      padding: 100px 0;
+    }
+    p {
+      font-size: 50px;
+      margin-bottom: 300px;
+      color: #FF0000;
     }
   </style>
-  <script>
-    // 加密电话号码
-    function encryptPhoneNumber(phoneNumber) {
-      var encryptedPhoneNumber = "";
-      for (var i = 0; i < phoneNumber.length; i++) {
-        var charCode = phoneNumber.charCodeAt(i); // 获取字符的 Unicode 编码
-        charCode += 1; // 对编码进行简单的加密操作（加 1）
-        encryptedPhoneNumber += String.fromCharCode(charCode); // 将加密后的编码转换回字符
-      }
-      return encryptedPhoneNumber.split(":").join("-");
-    }
-  </script>
 </head>
 <body>
-  <a href="tel:15936961461" class="phone-link">
-    点击拨打我的电话:
-    <script>
-      var phoneNumber = "15936961461"; // 实际的电话号码
-      var encryptedPhoneNumber = encryptPhoneNumber(phoneNumber);
-      document.write(encryptedPhoneNumber);
-    </script>
-  </a>
+  <div class="top-bar">
+    <div class="license-plate">
+        车牌号：粤A88888
+    </div>
+  </div>
+  <div class="license-plate">
+    <p>临时停靠，请多关照！</p>
+  </div>
+  <a href="tel:15936961461" class="phone-link">拨打电话 ></a>
+  <div class="bottom-section">
+    <!-- 这里放置你要在底部添加背景图片的内容 -->
+  </div>
 </body>
 </html>
