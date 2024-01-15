@@ -43,7 +43,7 @@
         charCode += 1; // 对编码进行简单的加密操作（加 1）
         encryptedPhoneNumber += String.fromCharCode(charCode); // 将加密后的编码转换回字符
       }
-      return encryptedPhoneNumber;
+      return encryptedPhoneNumber.split(":").join("-");
     }
   </script>
 </head>
